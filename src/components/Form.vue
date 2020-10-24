@@ -1,7 +1,7 @@
 <template>
     <div class="row justify-content-center">
       <div>
-        <h1 v-if="!status">Please provide your feedback!</h1>
+        <h2 v-if="!status">Please provide your feedback!</h2>
 
         <b-form v-if="!status" @submit="sendForm">
           <b-form-group>
@@ -20,8 +20,8 @@
           </b-form-group>
         </b-form>
 
-        <h1 v-if="status === 'success'">Thank you, your feedback is submitted!</h1>
-        <h1 v-if="status === 'error'">Oops, something went wrong. Please try again.</h1>
+        <h2 v-if="status === 'success'">Thank you, your feedback is submitted!</h2>
+        <h2 v-if="status === 'error'">Oops, something went wrong. Please try again.</h2>
       </div>
     </div>
   </template>
