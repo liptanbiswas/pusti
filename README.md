@@ -1,5 +1,7 @@
 # pusti
 
+Repository to accompany with the article at https://dev.to/liptanbiswas/creating-feedback-form-on-vercel-using-vue-and-golang-5fc1
+
 ## Project setup
 ```
 npm install
