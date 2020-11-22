@@ -14,6 +14,7 @@ type Feedback struct {
 	Name    string
 	Email   string
 	Message string
+	URL string
 }
 
 //Handler is the default handler
@@ -46,7 +47,8 @@ func SendMail(f Feedback) (res int, out string, err error) {
 	from := mail.NewEmail(f.Name, f.Email)
 	subject := "[Feedback] on CKAD tutorials"
 	to := mail.NewEmail("Liptan Biswas", "me@liptanbiswas.com")
-	message := mail.NewSingleEmail(from, subject, to, "", f.Message)
+	msgbody := "Page: " + f.URL + "<br/>" + "Message: <br/>" + f.Message 
+	message := mail.NewSingleEmail(from, subject, to, "", msgbody)
 	client := sendgrid.NewSendClient(os.Getenv("SENDGRID_API_KEY"))
 	r, err := client.Send(message)
 	if err != nil {
